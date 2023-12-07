@@ -7,7 +7,7 @@
 
 Este projeto demonstra o uso do LocalStorage para armazenar dados no navegador usando JavaScript, HTML e CSS.
 
-![Captura de tela 2023-12-07 133052](https://github.com/rubenslyra/localstorag-sessionstorage/assets/37023108/0e962127-f33b-4107-9296-7fcc8abe3da7)
+![Captura de tela 2023-12-07 132157](https://github.com/rubenslyra/localstorag-sessionstorage/assets/37023108/36bc364e-fb53-4f93-ab71-e7318ebbe1c8)
 
 
 ## Instruções
