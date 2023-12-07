@@ -45,14 +45,22 @@
         // Para impedir a ação padrão do formuário, quando a página é recarrega:
         e.preventDefault();
 
-        var setValue = sessionStorage.setItem("name", name);
-        var getValue = sessionStorage.getItem("name", name);
+        var setValue = localStorage.setItem("name", name);
+        var getValue = localStorage.getItem("name", name);
 
         formName.innerText = "Gravando na memória...";
         setTimeout(() => {
           formName.innerText = getValue;
         }, 2000);
       }
+
+      // quando o conteúdo da página for carregada, o evento abaixo será disparado
+      document.addEventListener("DOMContentLoaded", () => {
+        formName.innerText = getValue;
+        console.log(
+          "Página carregada... verique os valores armazenados no LocalStorage do seu navegador."
+        );
+      });
     </script>
   </body>
 </html>
