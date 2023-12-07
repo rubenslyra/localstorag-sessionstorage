@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armazenamento Temporário</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-12">
+        <div class="row">
+          <div class="form">
+            <form method="post" onsubmit="javascript:onSubmit(event);">
+              <input
+                type="text"
+                name="name"
+                maxlength="60"
+                placeholder="Digite seu nome..."
+                required
+                autofocus
+              />
+              <button type="submit">Gravar nome</button>
+            </form>
+
+            <div class="row">
+              <div class="div">
+                O nome gravado é: <span id="getName"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function onSubmit(e) {
+        var name = document.getElementsByName("name")[0].value; // lembre-se de que pondem haver mais de um elemento com o mesmo nome
+        var formName = document.getElementById("getName");
+        // Para impedir a ação padrão do formuário, quando a página é recarrega:
+        e.preventDefault();
+
+        var setValue = sessionStorage.setItem("name", name);
+        var getValue = sessionStorage.getItem("name", name);
+
+        formName.innerText = "Gravando na memória...";
+        setTimeout(() => {
+          formName.innerText = getValue;
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>
